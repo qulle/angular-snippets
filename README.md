@@ -62,19 +62,24 @@ class AppComponent {
     ) { }
 
     getUserClick(): void {
-        
+        const user = this.localStorage.get<User>('currentUser');
     }
 
     setUserClick(): void {
-
+        const user = new User({
+            name: 'John',
+            email: 'john.doe@domain.com'
+        });
+        
+        this.localStorage.set<User>('currentUser', user);
     }
 
     clearUserClick(): void {
-
+        this.localStorage.remove('currentUser');
     }
 
     clearAllClick(): void {
-
+        this.localStorage.clear();
     }
 }
 ```
