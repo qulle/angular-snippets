@@ -1,4 +1,4 @@
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { LogLevel } from './types/log-level.type';
 import { FrontendLogItem } from './models/frontend-log-item.model';
 import { BackendLogItem } from './models/backend-log-item.model';
@@ -32,10 +32,8 @@ export class LoggerService {
         { icon: '🐞', level: LogLevel.Fatal, print: console.error },
     ];
 
-    // To avoid circular dependencies, required services are injected on fly
     constructor(
-        private readonly http: HttpClient, 
-        private readonly injector: Injector
+        private readonly http: HttpClient
     ) {
         this.buffer = [];
         this.maxBufferSize = 10000;
