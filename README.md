@@ -17,7 +17,7 @@ The various log methods will map to the browser console different log methods to
 ### Usage
 ```ts
 class AppComponent {
-    private readonly logPrefix: string = `[${AppComponent.name}]`;
+    private readonly logPrefix: string = `[AppComponent]`;
 
     constructor(
         private readonly logger: LoggerService
@@ -44,10 +44,6 @@ class AppComponent {
     }
 }
 ```
-
-The code above will output content in the browser console as followed.
-
-*TODO*
 
 ---
 
